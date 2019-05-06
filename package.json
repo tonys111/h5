@@ -21,7 +21,9 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.5",
-    "postcss-plugin-px2rem": "^0.8.1",
+    "postcss-aspect-ratio-mini": "^1.0.1",
+    "postcss-px-to-viewport": "^1.1.0",
+    "postcss-viewport-units": "^0.1.6",
     "precss": "^4.0.0",
     "vue-template-compiler": "^2.5.21"
   },
