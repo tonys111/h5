@@ -1,10 +1,10 @@
 const path = require('path')
 const fs = require('fs')
 const SpritesmithPlugin = require('webpack-spritesmith')
-const entrySprite = path.resolve(__dirname, './src/assets/entry_sprite')
+const entrySprite = path.resolve(__dirname, './src/assets/sprite/entry')
 const files = fs.readdirSync(entrySprite)
 const spriteConfig = []
-function exists(path){  
+function exists(path){
     return fs.existsSync(path) || path.existsSync(path);  
 }  
 function isDir(path){  
@@ -19,9 +19,9 @@ function spritPlugin(folderPath, name){
         },
         // 输出雪碧图文件及样式文件，这个是打包后，自动生成的雪碧图和样式，自己配置想生成去哪里就去哪里
         target: {
-            image: path.resolve(__dirname, `./src/assets/out_sprite/${ name }.png`),
+            image: path.resolve(__dirname, `./src/assets/sprite/out/${ name }.png`),
             css: [
-                [path.resolve(__dirname, `./src/assets/css/sprite/${ name }.css`), {
+                [path.resolve(__dirname, `./src/assets/sprite/css/${ name }.css`), {
                     // 引用自己的模板
                     format: 'function_based_template'
                 }],
@@ -33,7 +33,7 @@ function spritPlugin(folderPath, name){
         },
         // 样式文件中调用雪碧图地址写法（Readme这么写的）
         apiOptions: {
-            cssImageRef: '~sprite.png'
+            cssImageRef: `~@/assets/sprite/out/${ name }.png`
         },
         // 让合成的每个图片有一定的距离，否则就会紧挨着，不好使用
         spritesmithOptions: {
