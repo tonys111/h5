@@ -13,6 +13,7 @@
         <div class="bg"></div>
         <div class="icon-header icon-header-one"></div>
         <div class="icon-footer icon-footer-weibo"></div>
+        <img src="@/assets/img/mini.png" alt="">
     </div>
 </template>
 
@@ -26,7 +27,7 @@
     font-size: 100px;
 }
 .bg{
-    height: 300px;
+    height: 200px;
     background-image: url(~@/assets/img/pic.png);
 }
 img{

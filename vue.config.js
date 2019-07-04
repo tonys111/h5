@@ -4,6 +4,9 @@ module.exports = {
     // devServer: {
     //     proxy: 'http://localhost:4000'
     // }，
+    // publicPath: process.env.NODE_ENV === 'production'
+    // ? '/production-sub-path/'
+    // : '/',
     chainWebpack: config => {
         //vue-cli脚手架自动将懒加载使用预加载方式处理了
         config.plugins.delete('prefetch')
