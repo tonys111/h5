@@ -10,7 +10,9 @@
             <i class="iconfont icon-app"></i>
         </div>
         <img src="@/assets/img/pic.png">
-        <div class="icon icon-1"></div>
+        <div class="bg"></div>
+        <div class="icon-header icon-header-one"></div>
+        <div class="icon-footer icon-footer-weibo"></div>
     </div>
 </template>
 
@@ -22,6 +24,10 @@
 }
 .icon-app{
     font-size: 100px;
+}
+.bg{
+    height: 300px;
+    background-image: url(~@/assets/img/pic.png);
 }
 img{
     width: 200px;
