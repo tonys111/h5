@@ -1,4 +1,4 @@
-const spriteConfig = require('./spriteConfig')
+const spriteConfig = require('./sprite.config')
 
 module.exports = {
     // devServer: {
