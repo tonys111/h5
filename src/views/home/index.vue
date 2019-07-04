@@ -1,43 +1,30 @@
 <template>
     <div class="home">
-        <div aspectratio w-188-246 class="box">
+        <div aspectratio w-1-1 class="box">
+            <div aspectratio-content>content_content</div>
+        </div>
+        <div aspectratio w-2-1 class="box">
             <div aspectratio-content>content</div>
         </div>
         <div>
-            <p>123uidoea</p>
+            <i class="iconfont icon-app"></i>
         </div>
+        <img src="@/assets/img/pic.png">
+        <div class="icon icon-1"></div>
     </div>
-    
 </template>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .box{
-    width: 120px;
+    width: 220px;
+    background-color: #ddd;
+    margin-bottom: 10px;
 }
-[aspectratio] {
-  position: relative;
+.icon-app{
+    font-size: 100px;
 }
-[aspectratio]::before {
-  content: '';
-  display: block;
-  width: 1px;
-  margin-left: -1px;
-  height: 0;
-}
-[aspectratio-content] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-}
-[w-188-246] {
-  aspect-ratio: '1:2';
-}
-p{
-    height: 100px;
+img{
+    width: 200px;
 }
 </style>
 

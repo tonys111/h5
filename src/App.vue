@@ -1,16 +1,8 @@
-<template>
-    <div>
-        <div class="app_box">123</div>
-        <router-view/>
-        <!-- <ItemFooter/> -->
-    </div>
-</template>
-
 <script>
-// import ItemFooter from '@/components/footer'
+import ItemFooter from '@/components/footer'
 export default {
     components:{
-        // ItemFooter,
+        ItemFooter,
     },
     data(){
         return{
@@ -19,6 +11,13 @@ export default {
     }
 }
 </script>
+
+<template>
+    <div>
+        <router-view/>
+        <ItemFooter/>
+    </div>
+</template>
 
 <style>
 .app_box{

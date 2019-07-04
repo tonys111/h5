@@ -12,8 +12,8 @@ const routes = [
         component: () => ({ component: import(/* webpackChunkName: "games" */ '@/views/games') }),
     },
     {
-        path: '/apps',
-        component: () => ({ component: import(/* webpackChunkName: "apps" */ '@/views/apps') }),
+        path: '/application',
+        component: () => ({ component: import(/* webpackChunkName: "application" */ '@/views/application') }),
     },
     {
         path: '/resume',
