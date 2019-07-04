@@ -1,0 +1,4 @@
+.icon-header { background-image: url(~@/assets/sprite/out/header.png);background-size: 262px 230px;}
+.icon-header-one { width: 128px; height: 126px; background-position: 0px 0px; }
+.icon-header-three { width: 100px; height: 84px; background-position: 0px -146px; }
+.icon-header-two { width: 114px; height: 112px; background-position: -148px 0px; }
