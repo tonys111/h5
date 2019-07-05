@@ -2,24 +2,30 @@ const spriteConfig = require('./sprite.config')
 
 module.exports = {
     // devServer: {
-    //     proxy: 'http://localhost:4000'
-    // }，
+    //     proxy: {
+    //         '/_glaxy_b01_': {
+    //             target: 'https://www.lc3750.com/',
+    //             changeOrigin: true, // target是域名的话，需要这个参数，
+    //             secure: false // 设置支持https协议的代理
+    //         }
+    //     }
+    // },
     // publicPath: process.env.NODE_ENV === 'production'
-    // ? '/production-sub-path/'
+    // ? 'https://www.lc3750.com/'
     // : '/',
     chainWebpack: config => {
         //vue-cli脚手架自动将懒加载使用预加载方式处理了
         config.plugins.delete('prefetch')
         //图片压缩
         config.module
-        .rule("image-webpack-loader")
-        .test(/\.(gif|png|jpe?g|svg)$/i)
-        .use("file-loader")
-        .loader("image-webpack-loader")
-        .tap(() => ({
-          disable: process.env.NODE_ENV !== "production"
-        }))
-        .end();
+            .rule("image-webpack-loader")
+            .test(/\.(gif|png|jpe?g|svg)$/i)
+            .use("file-loader")
+            .loader("image-webpack-loader")
+            .tap(() => ({
+                disable: process.env.NODE_ENV !== "production"
+            }))
+            .end();
     },
     configureWebpack: config => {
         //合并图片后输出目录
