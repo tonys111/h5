@@ -28,7 +28,6 @@
 }
 .bg{
     height: 200px;
-    background-image: url(~@/assets/img/pic.png);
 }
 img{
     width: 200px;

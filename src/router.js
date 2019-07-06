@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/home'
 Vue.use(Router)
 const routes = [
     {
         path: '/',
-        component: Home,
+        component: () => ({ component: import(/* webpackChunkName: "home" */ '@/views/home') }),
     },
     {
         path: '/games',
