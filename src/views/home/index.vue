@@ -9,7 +9,10 @@
         <div>
             <i class="iconfont icon-app"></i>
         </div>
-        <img src="@/assets/img/pic.png">
+        <picture>
+            <source srcset="img/awesomeWebPImage.webp" type="image/webp">
+            <img src="@/assets/img/pic.png">
+        </picture>
         <div class="bg"></div>
         <div class="icon-header icon-header-one"></div>
         <div class="icon-footer icon-footer-weibo"></div>
@@ -28,6 +31,7 @@
 }
 .bg{
     height: 200px;
+    background-image: url(./wp.png);
 }
 img{
     width: 200px;
