@@ -9,16 +9,27 @@
         <div>
             <i class="iconfont icon-app"></i>
         </div>
-        <picture>
-            <source srcset="img/awesomeWebPImage.webp" type="image/webp">
-            <img src="@/assets/img/pic.png">
-        </picture>
         <div class="bg"></div>
         <div class="icon-header icon-header-one"></div>
         <div class="icon-footer icon-footer-weibo"></div>
+        <img src="@/assets/img/test.png">
         <img src="@/assets/img/mini.png" alt="">
     </div>
 </template>
+
+<script>
+export default {
+    data(){
+        return{}
+    },
+    created(){
+        this.$api.test().then(res=>{
+            console.log(res)
+        })
+    }
+}
+</script>
+
 
 <style lang="postcss" scoped>
 .box{
@@ -31,7 +42,7 @@
 }
 .bg{
     height: 200px;
-    background-image: url(./wp.png);
+    background-image: url('~@/assets/img/test.png')
 }
 img{
     width: 200px;

@@ -4,12 +4,9 @@ import router from './router'
 import store from '@/store'
 import '@/assets/css/common.css'
 import '@/assets/iconfont/iconfont.css'
-if(process.env.NODE_ENV === 'development'){
-    console.log(window.yuwei)
-} else {
-    // eslint-disable-next-line
-    __webpack_public_path__ = window.yuwei
-}
+import '@/lib/aixos_config'
+import * as api from '@/lib/api'
+Vue.prototype.$api = api
 Vue.config.productionTip = false
 new Vue({
     router,
