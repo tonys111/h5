@@ -14,15 +14,20 @@ export default {
 
 <template>
     <div>
-        <router-view/>
+        <transition name="fade" mode="out-in">
+            <router-view/>
+        </transition>
         <ItemFooter/>
     </div>
 </template>
 
-<style>
-.app_box{
-    width: 100px;
-    height: 100px;
+<style lang="postcss">
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .15s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
+
 

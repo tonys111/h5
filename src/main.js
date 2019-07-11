@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 import store from '@/store'
 import '@/assets/css/common.css'
-import '@/assets/iconfont/iconfont.css'
 import '@/lib/aixos_config'
 import * as api from '@/lib/api'
 Vue.prototype.$api = api
