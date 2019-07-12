@@ -59,7 +59,7 @@ export default {
             color: #aaa8b4;
         }
         p{
-            font-size: 16px;
+            font-size: 20px;
             line-height: 20px;
         }
         .iconfont{

@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="root">
         <transition name="fade" mode="out-in">
             <router-view/>
         </transition>
@@ -22,6 +22,9 @@ export default {
 </template>
 
 <style lang="postcss">
+.root{
+    padding-bottom: 120px;
+}
 .fade-enter-active, .fade-leave-active {
   transition: opacity .15s;
 }

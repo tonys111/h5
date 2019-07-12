@@ -1,17 +1,3 @@
-<template>
-    <div class="home">
-        <swipe :auto='100000' class="home-swipe">
-            <swipe-item v-for="item in banner" :key="item">
-                <img :src="item">
-            </swipe-item>
-        </swipe>
-        <br/>
-        <div class="setOnePx box"></div>
-        <p>降低呃呃呃 dsf 123</p>
-        <div class="setBorderAll box"></div>
-    </div>
-</template>
-
 <script>
 import { Swipe, SwipeItem } from 'vue-swipe';
 import 'vue-swipe/dist/vue-swipe.css'
@@ -32,6 +18,24 @@ export default {
 }
 </script>
 
+<template>
+    <div class="home">
+        <swipe :auto='100000' class="home-swipe">
+            <swipe-item v-for="item in banner" :key="item">
+                <img :src="item">
+            </swipe-item>
+        </swipe>
+        <br/>
+        <div class="setOnePx box"></div>
+        <p>降低呃呃呃 dsf 123</p>
+        <div class="setBorderAll box"></div>
+        <br/>
+        <div class="box_2"></div>
+         <br/>
+        <div class="box_3"></div>
+    </div>
+</template>
+
 <style lang="postcss" scoped>
     .home-swipe{
         height: 422px;
@@ -39,6 +43,16 @@ export default {
     .box{
         width: 200px;
         height: 200px;
+    }
+    .box_2{
+        width: 200px;
+        height: 200px;
+        border: 2px solid #000;
+    }
+    .box_3{
+        width: 200px;
+        height: 200px;
+        border: 3px solid #000;
     }
     .setOnePx{
         position: relative;
