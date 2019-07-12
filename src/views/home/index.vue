@@ -26,13 +26,9 @@ export default {
             </swipe-item>
         </swipe>
         <br/>
-        <div class="setOnePx box"></div>
+        <div class="border_line box"></div>
         <p>降低呃呃呃 dsf 123</p>
-        <div class="setBorderAll box"></div>
-        <br/>
-        <div class="box_2"></div>
-         <br/>
-        <div class="box_3"></div>
+        <div class="border_all box"></div>
     </div>
 </template>
 
@@ -43,47 +39,6 @@ export default {
     .box{
         width: 200px;
         height: 200px;
-    }
-    .box_2{
-        width: 200px;
-        height: 200px;
-        border: 2px solid #000;
-    }
-    .box_3{
-        width: 200px;
-        height: 200px;
-        border: 3px solid #000;
-    }
-    .setOnePx{
-        position: relative;
-        &::after{
-            position: absolute;
-            content: '';
-            background-color: red;
-            display: block;
-            width: 100%;
-            height: 1px;
-            transform: scale(1, 0.5);
-            bottom: 0;
-            left: 0;
-            border-radius: 50px;
-        }
-    }
-    .setBorderAll{
-        position: relative;
-        &::after{
-            position:absolute;
-            content:'';
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 200%;
-            transform: scale(0.5);
-            transform-origin: left top;
-            box-sizing: border-box;
-            border: 1px solid red;
-            border-radius: 50px;
-        }
     }
 </style>
 

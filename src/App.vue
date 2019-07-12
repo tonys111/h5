@@ -26,10 +26,10 @@ export default {
     padding-bottom: 120px;
 }
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .15s;
+    transition: opacity .15s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+    opacity: 0;
 }
 </style>
 

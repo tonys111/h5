@@ -4,6 +4,7 @@ import router from './router'
 import store from '@/store'
 import '@/assets/css/common.css'
 import '@/lib/aixos_config'
+import '@/lib/directive'
 import * as api from '@/lib/api'
 Vue.prototype.$api = api
 Vue.config.productionTip = false
