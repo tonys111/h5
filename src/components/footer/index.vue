@@ -19,8 +19,8 @@ export default {
                     icon: 'iconappstore',
                 },
                 {
-                    name: 'resume',
-                    url: '/resume',
+                    name: 'me',
+                    url: '/me',
                     icon: 'iconuser',
                 },
             ]

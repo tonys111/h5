@@ -25,20 +25,12 @@ export default {
                 <img :src="item">
             </swipe-item>
         </swipe>
-        <br/>
-        <div class="border_line box"></div>
-        <p>降低呃呃呃 dsf 123</p>
-        <div class="border_all box"></div>
     </div>
 </template>
 
 <style lang="postcss" scoped>
     .home-swipe{
         height: 422px;
-    }
-    .box{
-        width: 200px;
-        height: 200px;
     }
 </style>
 

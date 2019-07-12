@@ -19,8 +19,8 @@ const routes = [
         component: () => ({ component: import(/* webpackChunkName: "application" */ '@/views/application') }),
     },
     {
-        path: '/resume',
-        component: () => ({ component: import(/* webpackChunkName: "resume" */ '@/views/resume') }),
+        path: '/me',
+        component: () => ({ component: import(/* webpackChunkName: "me" */ '@/views/me') }),
     },
 ]
 export default new Router({
