@@ -12,19 +12,20 @@
 
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex'
-import actions from './store/actions'
+// import actions from './store/actions'
 export default {
     data(){
         return{
         }
     },
     created(){
+        this.gggetAppURL()
     },
     methods:{
         ...mapMutations(['CHANGE_TEXT']),
         ...mapMutations('pageGames', ['CHANGE_GAME']),
         ...mapActions(['getAppURL']),
-        ...mapActions('pageGames', Object.keys(actions)),
+        ...mapActions('pageGames',['gggetAppURL']),
     },
     computed: {
         ...mapState(['demo']),

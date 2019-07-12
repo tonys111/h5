@@ -12,19 +12,19 @@
 import { Swipe, SwipeItem } from 'vue-swipe';
 import 'vue-swipe/dist/vue-swipe.css'
 export default {
-    components: {
-        Swipe, SwipeItem
-    },
+    components: { Swipe, SwipeItem },
     data(){
         return{
-            banner: []
+            banner: [],
         }
     },
     created(){
         this.$api.getBanner().then(res=>{
             this.banner = res.list
         })
-    }
+    },
+    methods:{
+    },
 }
 </script>
 
