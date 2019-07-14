@@ -63,7 +63,7 @@ export default {
             line-height: 20px;
         }
         .iconfont{
-            font-size: 52px;
+            font-size: 56px;
         }
         .router-link-active{
             p,.iconfont{

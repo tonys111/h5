@@ -2,6 +2,7 @@ const spriteConfig = require('./sprite.config')
 
 module.exports = {
     productionSourceMap: false,
+    assetsDir: 'assets',
     // devServer: {
     //     proxy: {
     //         '/_glaxy_b01_': {
