@@ -4,7 +4,7 @@ Vue.use(Router)
 const routes = [
     { 
         path: '/', 
-        redirect: '/home' 
+        redirect: 'home' 
     },
     {
         path: '/home',
@@ -21,6 +21,10 @@ const routes = [
     {
         path: '/me',
         component: () => ({ component: import(/* webpackChunkName: "me" */ '@/views/me') }),
+    },
+    {
+        path: '/article',
+        component: () => ({ component: import(/* webpackChunkName: "article" */ '@/views/article') }),
     },
 ]
 export default new Router({

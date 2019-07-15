@@ -1,4 +1,5 @@
 <script>
+import { mapState } from 'vuex'
 export default {
     data(){
         return {
@@ -25,30 +26,42 @@ export default {
                 },
             ]
         }
+    },
+    computed:{
+        ...mapState(['currentRouter'])
     }
 }
 </script>
 
 <template>
-    <nav>
-        <router-link
-        v-for="item in nav"
-        :key="item.name"
-        :to='item.url'>
-            <i class="iconfont" :class="item.icon"></i>
-            <p>{{ item.name }}</p>
-        </router-link>
-    </nav>
+    <footer>
+        <nav v-show="currentRouter !== '/article'">
+            <router-link
+            v-for="item in nav"
+            :key="item.name"
+            :to='item.url'>
+                <i class="iconfont" :class="item.icon"></i>
+                <p>{{ item.name }}</p>
+            </router-link>
+        </nav>
+        <div class="back" @click="$router.go(-1)">
+            <i class="iconfont iconleft"></i>
+        </div>
+    </footer>
 </template>
 
 <style lang="postcss" scoped>
+    footer{
+        position: fixed;
+        bottom: 0;
+        height: 110px;
+        background-color: #fefefe;
+        width: 100%;
+        max-width: 650PX;
+    }
     nav{
         display: flex;
-        height: 110px;
-        position: fixed;
-        width: 100%;
-        bottom: 0;
-        background-color: #fefefe;
+        height: 100%;
         a{
             flex: 1;
             text-align: center;
@@ -70,6 +83,17 @@ export default {
                 color: #5ebdf8;
             }
         }
+    }
+    .back{
+        display: flex;
+        height: 100%;
+        align-items: center;
+        width: 80px;
+        padding-left: 30px;
+    }
+    .iconleft{
+        font-size: 50px;
+        color: #aaa8b4;
     }
 </style>
 

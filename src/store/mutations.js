@@ -1,5 +1,5 @@
 export default {
-    CHANGE_TEXT(state, text) {
-        state.demo = text
-    },
+    writeRouter(state, router){
+        state.currentRouter = router
+    }
 }

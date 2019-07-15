@@ -24,6 +24,8 @@ export default {
 <style lang="postcss">
 .root{
     padding-bottom: 120px;
+    max-width: 650PX;
+    margin: 0 auto;
 }
 .fade-enter-active, .fade-leave-active {
     transition: opacity .15s;
