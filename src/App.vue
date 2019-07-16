@@ -26,6 +26,7 @@ export default {
     padding-bottom: 120px;
     max-width: 650PX;
     margin: 0 auto;
+    overflow: hidden;
 }
 .fade-enter-active, .fade-leave-active {
     transition: opacity .15s;

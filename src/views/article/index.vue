@@ -1,7 +1,7 @@
 <script>
 import marked from 'marked'
 import hljs from "highlight.js";
-import 'highlight.js/styles/atom-one-light.css';
+import 'highlight.js/styles/atom-one-dark.css';
 export default {
     data(){
         return{
@@ -36,9 +36,18 @@ export default {
     <div v-html='html' class="article"></div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
     .article{
-        padding: 20px 30px 0 30px;
+        padding: 10px 20px 0 20px;
+        pre{
+            font-size: 16px;
+            color: #abb2bf;
+            background-color: #282c34;
+            padding:16px 12px;
+            margin: 10px 0;
+            overflow-x: auto;
+            border-radius: 6px;
+        }
     }
 </style>
 
