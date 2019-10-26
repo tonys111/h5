@@ -1,3 +1,0 @@
-<template>
-    <div>application</div>
-</template>

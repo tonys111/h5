@@ -10,22 +10,6 @@ const routes = [
         path: '/home',
         component: () => ({ component: import(/* webpackChunkName: "home" */ '@/views/home') }),
     },
-    {
-        path: '/games',
-        component: () => ({ component: import(/* webpackChunkName: "games" */ '@/views/games') }),
-    },
-    {
-        path: '/application',
-        component: () => ({ component: import(/* webpackChunkName: "application" */ '@/views/application') }),
-    },
-    {
-        path: '/me',
-        component: () => ({ component: import(/* webpackChunkName: "me" */ '@/views/me') }),
-    },
-    {
-        path: '/article',
-        component: () => ({ component: import(/* webpackChunkName: "article" */ '@/views/article') }),
-    },
 ]
 export default new Router({
   routes
