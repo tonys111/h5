@@ -1,6 +1,5 @@
 <script>
 /* eslint-disable */
-import '@/lib/hammer'
 export default {
     components:{
     },
@@ -13,8 +12,8 @@ export default {
         const body = document.body
         const hammertime = new Hammer(body)
         hammertime.on('panleft', function(ev) {
-            console.log(ev.type);
-        });
+            console.log(ev.type)
+        })
     }
 }
 </script>

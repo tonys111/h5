@@ -4,6 +4,7 @@ import router from './router'
 import store from '@/store'
 import '@/assets/css/common.css'
 import '@/lib/rem'
+import '@/lib/hammer'
 import { DatetimePicker } from 'vant'
 import { Skeleton } from 'vant'
 Vue.use(Skeleton)
