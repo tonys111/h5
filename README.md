@@ -32,4 +32,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 See [browserslist document](https://github.com/browserslist/browserslist/).
 
 
-qweqwe
+qweqweadasdsad
