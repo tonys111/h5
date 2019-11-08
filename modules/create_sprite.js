@@ -19,7 +19,7 @@ module.exports = (dir, outFilePath, outCssPath) => {
 
     const spritDataFn = files => {
         return new Promise((res, rej)=>{
-            Spritesmith.run({ src: files }, (err, result)=>{
+            Spritesmith.run({ src: files, algorithm: 'left-right' }, (err, result)=>{
                 if(err){
                     rej(err)
                 } else {
