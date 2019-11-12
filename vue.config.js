@@ -1,5 +1,6 @@
 module.exports = {
     productionSourceMap: false,
+    publicPath: './',
     chainWebpack: config => {
         //vue-cli脚手架自动将懒加载使用预加载方式处理了
         config.plugins.delete('prefetch')

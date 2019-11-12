@@ -5,8 +5,7 @@ import store from '@/store'
 import '@/assets/css/common.css'
 import '@/lib/rem'
 import '@/lib/hammer'
-import { DatetimePicker } from 'vant'
-import { Skeleton } from 'vant'
+import { DatetimePicker, Skeleton } from 'vant'
 Vue.use(Skeleton)
 Vue.use(DatetimePicker)
 Vue.config.productionTip = false
