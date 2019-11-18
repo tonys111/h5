@@ -5,10 +5,8 @@ import store from '@/store'
 import '@/assets/css/common.css'
 import '@/lib/rem'
 import '@/lib/hammer'
-import { DatetimePicker, Skeleton } from 'vant'
-Vue.use(Skeleton)
-Vue.use(DatetimePicker)
-Vue.config.productionTip = false
+import GlobalInstall from '@/lib/global_install'
+Vue.use(GlobalInstall)
 new Vue({
     router,
     store,

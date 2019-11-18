@@ -1,4 +1,7 @@
-// import Vue from "vue"
+export default function (){
+    // console.log(Vue)
+}
+
 // Vue.directive('track', { // v-track="`导航 登录`"
 //     bind(el, val) {
 //         el.onclick = () => {

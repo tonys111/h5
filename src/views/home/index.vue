@@ -15,6 +15,10 @@ export default {
                     name: 'vant组件',
                     link: '/vant'
                 },
+                {
+                    name: '表单组件',
+                    link: '/form'
+                },
             ]
         }
     },
