@@ -3,7 +3,13 @@ export default {
     data(){
         return{
         }
-    }
+    },
+    methods:{
+        validate(){
+            console.log('select')
+            return true
+        },
+    },
 }
 </script>
 

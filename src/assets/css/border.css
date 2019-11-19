@@ -13,7 +13,7 @@
     transform: scale(.5);
     border-width: 0;
     border-style: solid;
-    border-color: #ddd;
+    border-color: red;
 }
 ._border_top:after {
     border-top-width: 1px;
