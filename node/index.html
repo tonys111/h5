@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const observe = (function(){
+            let _msg = {}
+            return {
+                on(type, fn){
+                    if(typeof _msg[type] === 'undefined'){
+                        _msg[type] = [fn]
+                    } else {
+                        _msg[type].push(fn)
+                    }
+                },
+                sub(type, args){
+                    if(!_msg[type]){
+                        return
+                    }
+                    let evnts = {
+                        type,
+                        args: args || {}
+                    }
+                    let len = _msg[type].length
+                    for (let i = 0; i < len; i++) {
+                        _msg[type][i].call(this, evnts)
+                    }
+                },
+                off(type, fn){
+                    if(_msg[type] instanceof Array){
+                        let i = _msg[type].length - 1
+                        for(; i>=0; i--){
+                            _msg[type][i] === fn && _msg[type].splice(i, 1)
+                        }
+                    }
+                },
+            }
+        })()
+        observe.on('say', function(data){
+            console.log(data)
+        })
+        setTimeout(function(){
+            observe.sub('say', {text: 123})
+        }, 1000)
+    </script>
+</body>
+</html>
