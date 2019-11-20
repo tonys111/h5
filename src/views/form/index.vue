@@ -6,12 +6,13 @@ export default {
             cb()
         }
         const validateId = (val, cb) => {
-            cb('test')
+            cb()
         }
         return{
             form:{
                 userName: '',
-                id: ''
+                id: '',
+                city: '',
             },
             rules:{
                 userName: {
@@ -37,7 +38,6 @@ export default {
 
 <template>
     <FormC ref="form">
-        <div class="_border_all">123123</div>
         <FormInput
             v-model="form.userName"
             :rule="rules.userName"
@@ -46,7 +46,9 @@ export default {
             v-model="form.id"
             :rule="rules.id"
         />
-        <!-- <FormSelect/> -->
+        <FormSelect v-model="form.city">
+            
+        </FormSelect>
         <button @click.prevent="onSubmit">onSubmit</button>
     </FormC>
 </template>

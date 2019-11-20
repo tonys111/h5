@@ -28,11 +28,12 @@ export default {
 <template>
     <ul class="nav">
         <router-link
-        v-for="item in list"
-        :key="item.link"
-        :to="item.link"
-        tag="li"
-        class="_border_bottom">{{ item.name }}</router-link>
+            v-for="item in list"
+            :key="item.link"
+            :to="item.link"
+            tag="li"
+            class="_border_bottom"
+        >{{ item.name }}</router-link>
     </ul>
 </template>
 

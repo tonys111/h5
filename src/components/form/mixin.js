@@ -1,5 +1,5 @@
 export default {
     model: {
-        event: 'evt'
+        event: 'evt',
     }
 }
