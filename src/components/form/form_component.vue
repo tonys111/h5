@@ -9,15 +9,8 @@ export default {
                 flags.push(flag)
             }
             if(flags.includes(false)){
-                throw Error()
+                throw Error('表单错误')
             }
-            // return !flags.includes(false)
-            // this.$children.map(async item => {
-            //     const flag = await item.validate()
-            //     flags.push(flag)
-            // })
-            // console.log(flags)
-            // return !flags.includes(false)
         }
     }
 }

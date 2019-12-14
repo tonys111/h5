@@ -8,49 +8,69 @@ export default {
             type: String,
             default: 'label text',
         },
+        required: {
+            type: Boolean,
+            default: false,
+        }
     },
     data(){
         return{
-            
+            errorMsg: ''
         }
     },
     methods:{
         validate(){
             return new Promise((resolve) => {
-                resolve(true)
+                if(this.required){
+                    if(this.value){
+                        this.errorMsg = ''
+                        resolve(true)
+                    } else {
+                        this.errorMsg = `必须选择${ this.label }`
+                        resolve(false)
+                    }
+                } else {
+                    resolve(true)
+                }
             })
         },
+        change(e){
+            if(this.required && e.target.value){
+                this.errorMsg = ''
+            } else {
+                this.errorMsg = `必须选择${ this.label }`
+            }
+            this.$emit('evt', e.target.value)
+        }
     },
 }
 </script>
 
 <template>
     <div class="form_select">
-        <label>{{ label }}</label>
-        <div class="_border_all select_wrap">
+        <label class="label_text">{{ label }}</label>
+        <div
+            class="wrap"
+            :class="{'focus_border_error' : errorMsg }"
+        >
             <select
-                @input="$emit('evt', $event.target.value)"
+                @input="change"
                 :value="value"
             >
-                <option value="">test1</option>
-                <option value="2">test2</option>
-                <option value="3">test3</option>
+                <slot></slot>
             </select>
+            <i class="iconfont iconleft"></i>
+            <p
+                v-show="errorMsg" 
+                class="error_text"
+            >{{ errorMsg }}</p>
         </div>
     </div>
 </template>
 
 <style lang="postcss" scoped>
+    @import './style';
     .form_select{
-        display: flex;
-        align-items: center;
-        margin-bottom: 38px;
-        label{
-            font-size: 28px;
-            width: 16%;
-            text-align: right;
-            padding-right: 10px;
-        }
         select{
             font-size: 26px;
             padding: 0 10px;
@@ -58,21 +78,14 @@ export default {
             width: 100%;
         }
     }
-    .select_wrap{
-        flex: 1;
-    }
-</style>
-
-<style lang="postcss">
-    .form_select{
-        ._border_all:after {
-            border-radius: 16px;
-        }
-        .focus_border:after {
-            border-color: #409eff;
-        }
-        .focus_border_error:after {
-            border-color: #f56c6c;
-        }
+    .iconleft{
+        position: absolute;
+        right: 20px;
+        top: 23px;
+        font-size: 35px;
+        z-index: 0;
+        pointer-events: none;
+        transform:rotate(-90deg);
+        color: #ddd;
     }
 </style>
