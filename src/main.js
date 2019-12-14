@@ -5,8 +5,10 @@ import store from '@/store'
 import '@/assets/css/common.css'
 import '@/lib/rem'
 import '@/lib/hammer'
+import navGuards from '@/lib/navigation_guards'
 import GlobalInstall from '@/lib/global_install'
 Vue.use(GlobalInstall)
+navGuards(router, store)
 new Vue({
     router,
     store,
