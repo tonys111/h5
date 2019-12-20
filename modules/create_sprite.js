@@ -14,7 +14,9 @@ module.exports = (dir, outFilePath, outCssPath) => {
     const cssPath = `${outCssPath}/${dirName}.css`
 
     dirFiles.map(file=>{
-        files.push(`${dir}/${file}`)
+        if(file.includes('png') || file.includes('jpg')){
+            files.push(`${dir}/${file}`)
+        }
     })
 
     const spritDataFn = files => {
