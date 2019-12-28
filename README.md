@@ -30,5 +30,3 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### browserslist
 See [browserslist document](https://github.com/browserslist/browserslist/).
-
-212qeqeqwq
