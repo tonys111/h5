@@ -17,10 +17,13 @@ export default {
 <template>
     <div>
         <swipe class="my-swipe">
-            <swipe-item class="slide1"></swipe-item>
+            <swipe-item class="slide1">
+                <div class="sprite-base base-boat"></div>
+            </swipe-item>
             <swipe-item class="slide2"></swipe-item>
             <swipe-item class="slide3"></swipe-item>
         </swipe>
+        <div class="sprite-base base-boat"></div>
     </div>
 </template>
 

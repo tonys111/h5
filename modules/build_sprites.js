@@ -1,12 +1,12 @@
 const path = require('path')
 const fs = require('fs')
 const createSprite = require('./create_sprite')
-const entrySprite = path.resolve(__dirname, '..', './src/assets/sprite/entry')
+const entrySprite = path.resolve(__dirname, '..', './src/sprite/entry')
+const outFilePath = path.resolve(__dirname, '..', './src/sprite/out')
+const outCssPath = path.resolve(__dirname, '..', './src/sprite/css')
 const files = fs.readdirSync(entrySprite)
 const exists = path => fs.existsSync(path) || path.existsSync(path)
 const isDir = path => exists(path) && fs.statSync(path).isDirectory()
-const outFilePath = path.resolve(__dirname, '..', './src/assets/sprite/out')
-const outCssPath = path.resolve(__dirname, '..', './src/assets/sprite/css')
 const delDir = path => {
     let files = [];
     if(fs.existsSync(path)){
@@ -23,6 +23,8 @@ const delDir = path => {
     }
 }
 
+let common = ''
+
 delDir(outFilePath)
 delDir(outCssPath)
 fs.mkdirSync(outFilePath)
@@ -32,6 +34,10 @@ for (const i of files) {
     const filePath = entrySprite + '/' + i
     const flag = isDir(filePath)
     if(flag) {
+        const filePathArr = filePath.split('/')
+        const cssName = filePathArr[filePathArr.length - 1]
+        common += `@import './${cssName}';`
         createSprite(filePath, outFilePath, outCssPath)
     }
 }
+fs.writeFileSync(outCssPath + '/common.css', common)

@@ -1,0 +1,25 @@
+
+            .sprite-base {
+                display: inline-block;
+                background-image: url(~@/sprite/out/base.png);
+                background-size: 160px 53px;
+            }
+        
+                .base-boat{
+                    background-position: 0px 0;
+                    width: 30px;
+                    height: 25px;
+                }
+            
+                .base-fly{
+                    background-position: -30px 0;
+                    width: 50px;
+                    height: 33px;
+                }
+            
+                .base-boat_disk{
+                    background-position: -80px 0;
+                    width: 80px;
+                    height: 53px;
+                }
+            

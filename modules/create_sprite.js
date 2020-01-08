@@ -1,5 +1,4 @@
 const Spritesmith = require('spritesmith')
-const templater = require('spritesheet-templates')
 const fs = require('fs')
 module.exports = (dir, outFilePath, outCssPath) => {
     if(!dir) throw 'miss dir path'
@@ -9,7 +8,7 @@ module.exports = (dir, outFilePath, outCssPath) => {
     const dirFiles = fs.readdirSync(dir)
     const files = []
     const dirPathArr = dir.split('/')
-    const dirName = dirPathArr[dirPathArr.length-1]
+    const dirName = dirPathArr[dirPathArr.length - 1]
     const filePath = `${outFilePath}/${dirName}.png`
     const cssPath = `${outCssPath}/${dirName}.css`
 
@@ -48,14 +47,39 @@ module.exports = (dir, outFilePath, outCssPath) => {
         return arr
     }
 
+    const cssStr = spritData => {
+        const dirNameArr = dir.split('/')
+        const dirName = dirNameArr[dirNameArr.length - 1]
+        const { coordinates, properties } = spritData
+        const urlArr = filePath.split('/')
+        const urlLen = urlArr.length
+        const url = `~@/${urlArr[urlLen - 3]}/${urlArr[urlLen - 2]}/${urlArr[urlLen - 1]}`
+        let str = `
+            .sprite-${ dirName } {
+                display: inline-block;
+                background-image: url(${ url });
+                background-size: ${ properties.width }px ${ properties.height }px;
+            }
+        `
+        Object.keys(coordinates).map( val =>{
+            const arr = val.split('/')
+            const name = arr[arr.length - 1].replace('.png', '')
+            let position = - coordinates[val].x
+            str += `
+                .${ dirName }-${ name }{
+                    background-position: ${ position }px 0;
+                    width: ${ coordinates[val].width }px;
+                    height: ${ coordinates[val].height }px;
+                }
+            `
+        })
+        return str
+    }
+
     async function run(){
         const spritData = await spritDataFn(files)
-        const css = templater({
-            sprites: formatCoordinates(spritData.coordinates),
-            spritesheet: { ...spritData.properties, image: filePath }
-        })
-        fs.writeFileSync(filePath, spritData.image)//输出合并的图片
-        fs.writeFileSync(cssPath, css)//输出css
+        fs.writeFileSync(filePath, spritData.image)
+        fs.writeFileSync(cssPath, cssStr(spritData))
     }
     run()
 }
