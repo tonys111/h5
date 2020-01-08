@@ -1,4 +1,4 @@
-import { DatetimePicker, Skeleton } from 'vant'
+import { DatetimePicker, Skeleton, Lazyload } from 'vant'
 import FormC from '@/components/form/form_component.vue'
 import FormInput from '@/components/form/form_input.vue'
 import FormSelect from '@/components/form/form_select.vue'
@@ -10,7 +10,8 @@ export default {
         Vue.component('FormInput', FormInput)
         Vue.component('FormSelect', FormSelect)
         Vue.use(Skeleton)
-        Vue.use(DatetimePicker)
+        .use(DatetimePicker)
+        .use(Lazyload)
         Directive(Vue)
         Vue.config.productionTip = false
     }
