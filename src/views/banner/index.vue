@@ -1,6 +1,5 @@
 <script>
-import { Swipe, SwipeItem } from 'vue-swipe'
-import 'vue-swipe/dist/vue-swipe.css'
+import { Swipe, SwipeItem } from 'vant';
 export default {
     components: {
         Swipe,
@@ -16,37 +15,23 @@ export default {
 
 <template>
     <div>
-        <swipe class="my-swipe">
-            <swipe-item class="slide1">
-                <div class="sprite-base base-boat"></div>
-            </swipe-item>
-            <swipe-item class="slide2"></swipe-item>
-            <swipe-item class="slide3"></swipe-item>
-        </swipe>
+        <Swipe
+            :autoplay="3000"
+            indicator-color="white"
+            class="banner"
+        >
+            <SwipeItem>1</SwipeItem>
+            <SwipeItem>2</SwipeItem>
+            <SwipeItem>3</SwipeItem>
+            <SwipeItem>4</SwipeItem>
+        </Swipe>
         <div class="sprite-base base-boat"></div>
     </div>
 </template>
 
 <style lang="postcss" scoped>
-    .my-swipe {
+    .banner{
         height: 300px;
-        color: #fff;
-        font-size: 30px;
-        text-align: center;
-    }
-    
-    .slide1 {
-        background-color: #0089dc;
-        color: #fff;
-    }
-    
-    .slide2 {
-        background-color: #ffd705;
-        color: #000;
-    }
-    
-    .slide3 {
-        background-color: #ff2d4b;
-        color: #fff;
+        background-color: #66c6f2;
     }
 </style>
