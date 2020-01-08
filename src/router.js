@@ -26,6 +26,10 @@ const routes = [
         path: '/form',
         component: () => ({ component: import(/* webpackChunkName: "form" */ '@/views/form') }),
     },
+    {
+        path: '/banner',
+        component: () => ({ component: import(/* webpackChunkName: "banner" */ '@/views/banner') }),
+    },
 ]
 export default new Router({
   routes

@@ -19,6 +19,10 @@ export default {
                     name: '表单组件',
                     link: '/form'
                 },
+                {
+                    name: 'banner组件',
+                    link: '/banner'
+                },
             ]
         }
     },
