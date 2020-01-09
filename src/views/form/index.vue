@@ -29,7 +29,7 @@ export default {
     methods:{
         onSubmit(){
             this.$refs.form.validate().then(()=>{
-                console.log('可以提交')
+                console.log('可以提交')// eslint-disable-line
             })
         }
     }
