@@ -40,6 +40,9 @@ export default {
 </template>
 
 <style lang="postcss" scoped>
+    .root{
+        padding-bottom: 100px;
+    }
 </style>
 
 

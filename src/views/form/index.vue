@@ -58,6 +58,14 @@ export default {
                 <option value="3">上海</option>
             </FormSelect>
             <button @click.prevent="onSubmit">onSubmit</button>
+            <div v-for="n in 50" :key="n">test</div>
+            <FormInput
+                v-model="form.id"
+                :rule="rules.id"
+                label='id'
+            />
+            <div>test</div>
+            <div>test</div>
         </FormC>
     </div>
 </template>
